@@ -3,8 +3,7 @@ MAINTAINER Bas Bloembergen <basbloembergen@gmail.com>
 
 ARG VERSION
 
-RUN apt-get update && apt-get install -y curl wget libavahi-compat-libdnssd-dev dbus avahi-daemon && \
-    node-gyp make g++ build-essential avahi-discover libnss-mdns
+RUN apt-get update && apt-get install -y curl wget libavahi-compat-libdnssd-dev dbus avahi-daemon node-gyp make g++ build-essential avahi-discover libnss-mdns
 
 RUN sed -i.bak 's/^#enable-dbus/enable-dbus/' /etc/avahi/avahi-daemon.conf
 
